@@ -1,5 +1,5 @@
 import React from 'react';
-import './Homepage.css'; // Updated CSS import
+import './Homepage.css'; 
 import { FaUser, FaSignInAlt, FaMapMarkerAlt, FaStar, FaHeart } from 'react-icons/fa';
 
 function Homepage() { // Updated component name
