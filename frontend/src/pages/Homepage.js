@@ -1,8 +1,23 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './Homepage.css'; // Updated CSS import
-import { FaUser, FaSignInAlt, FaMapMarkerAlt, FaStar, FaHeart } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
+import { FaUser, FaSignInAlt, FaMapMarkerAlt, FaStar, FaHeart, FaSearch } from 'react-icons/fa';
+
 
 function Homepage() { // Updated component name
+
+  const [searchQuery, setSearchQuery] = useState('');
+
+  
+  const handleSearchChange = (event) =>{
+    setSearchQuery(event.target.value);
+  };
+
+  function handleSearchSubmit(event) {
+  event.preventDefault();
+  console.log("Search vendors:", searchQuery);
+}
+
   return (
     <div className="App">
       {/* Hero Section */}
@@ -10,13 +25,25 @@ function Homepage() { // Updated component name
         <nav className="navbar">
           <div className="logo">DashDine</div>
           <ul className="nav-links">
-            <li><a href="/login"><FaSignInAlt /> Login</a></li>
-            <li><a href="/signup"><FaUser /> Sign Up</a></li>
+            <li><Link to="/login"><FaSignInAlt /> Login</Link></li>
+            <li><Link to="/signup"><FaUser /> Sign Up</Link></li>
           </ul>
         </nav>
         <div className="hero-content">
           <h1>Discover the Best Street Food Near You</h1>
           <p>Explore local street food vendors, read reviews, and find your next favorite dish.</p>
+
+          {/*Search Bar*/}
+          <form className="search-bar" onSubmit={handleSearchSubmit}>
+            <input
+              type = "text"
+              placeholder='Search vendors...'
+              value={searchQuery}
+              onChange={handleSearchChange}
+              />
+              <button type="submit"><FaSearch/></button>
+          </form>
+
           <button className="cta-button">Get Started</button>
         </div>
         <div className="hero-images">
