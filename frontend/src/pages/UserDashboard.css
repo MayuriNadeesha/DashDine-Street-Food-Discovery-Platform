@@ -1,0 +1,190 @@
+/* General Styles */
+.user-dashboard {
+    display: flex;
+    font-family: 'Arial', sans-serif;
+    height: 100vh;
+    background-color: #f8f8f8;
+  }
+  
+  /* Sidebar Styles */
+  .sidebar {
+    width: 250px;
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .sidebar .logo {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 30px;
+    text-align: center;
+  }
+  
+  .sidebar nav {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .sidebar button {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .sidebar button:hover {
+    background-color: #444;
+  }
+  
+  .sidebar button.active {
+    background-color: #ff6f61;
+  }
+  
+  /* Main Content Styles */
+  .main-content {
+    flex: 1;
+    padding: 20px;
+    background-color: white;
+  }
+  
+  /* Top Section: Welcome, Search Bar, and Profile Picture */
+  .top-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .welcome-message h1 {
+    font-size: 32px;
+    color: #333;
+    margin: 0;
+  }
+  
+  .search-bar {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    margin-right: 20px;
+  }
+  
+  .search-bar input {
+    width: 300px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px 0 0 5px;
+    outline: none;
+  }
+  
+  .search-bar button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #ff6f61;
+    color: white;
+    border: none;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .search-bar button:hover {
+    background-color: #ff4f41;
+  }
+  
+  .profile-picture-container {
+    display: flex;
+    align-items: center;
+  }
+  
+  .profile-picture {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 2px solid #ff6f61;
+  }
+  
+  /* Content Section */
+  .content-section {
+    margin-top: 20px;
+  }
+  
+  .content-section h2 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 15px;
+  }
+  
+  .content-section ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .content-section li {
+    background-color: #f8f8f8;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .content-section li strong {
+    color: #ff6f61;
+  }
+  
+  .content-section p {
+    font-size: 14px;
+    color: #555;
+    margin-top: 5px;
+  }
+  
+  /* Profile Section Specific Styles */
+  .profile-section {
+    text-align: center;
+  }
+  
+  .profile-picture-center {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  
+  .profile-picture-large {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 3px solid #ff6f61;
+  }
+  
+  /* Star Ratings */
+  .star-filled {
+    color: #ffcc00; /* Filled star color */
+  }
+  
+  .star-half {
+    color: #ffcc00; /* Half-filled star color */
+    position: relative;
+  }
+  
+  .star-half::before {
+    content: '★';
+    position: absolute;
+    left: 0;
+    width: 50%;
+    overflow: hidden;
+    color: #ffcc00;
+  }
+  
+  .star-empty {
+    color: #ccc; /* Empty star color */
+  }

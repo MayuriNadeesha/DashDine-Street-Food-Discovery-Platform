@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom'; // Import useNavigate hook
 import './SignUp.css'; // You can style the page with this CSS file
 

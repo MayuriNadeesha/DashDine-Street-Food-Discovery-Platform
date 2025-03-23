@@ -1,71 +1,81 @@
+/* Login Container */
 .login-container {
-    width: 350px;
-    margin: 100px auto;
-    padding: 20px;
-    text-align: center;
-    background: white;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  }
-  
-  h2 {
-    color: #333;
-  }
-  
-  .input-group {
-    display: flex;
-    align-items: center;
-    margin: 15px 0;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  }
-  
-  .input-group .icon {
-    margin-right: 10px;
-    color: #888;
-  }
-  
-  .input-group input {
-    flex: 1;
-    border: none;
-    outline: none;
-    font-size: 16px;
-  }
-  
-  .login-button {
-    width: 100%;
-    padding: 10px;
-    margin-top: 10px;
-    background: #ff6f61;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: 0.3s;
-  }
-  
-  .login-button:hover {
-    background: #ff4f41;
-  }
-  
-  .error-message {
-    color: red;
-    font-size: 14px;
-  }
-  
-  .signup-link {
-    margin-top: 10px;
-    font-size: 14px;
-  }
-  
-  .signup-link a {
-    color: #ff6f61;
-    text-decoration: none;
-  }
-  
-  .signup-link a:hover {
-    text-decoration: underline;
-  }
-  
+  max-width: 400px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #f8f8f8;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.login-container h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* Error Message */
+.error-message {
+  color: #ff6f61;
+  font-size: 14px;
+  margin-bottom: 15px;
+}
+
+/* Input Group */
+.input-group {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+  background-color: white;
+  border-radius: 5px;
+  padding: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.input-group .icon {
+  font-size: 18px;
+  color: #555;
+  margin-right: 10px;
+}
+
+.input-group input {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  background: transparent;
+}
+
+/* Login Button */
+.login-button {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  background-color: #ff6f61;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.login-button:hover {
+  background-color: #ff4f41;
+}
+
+/* Signup Link */
+.signup-link {
+  font-size: 14px;
+  color: #555;
+  margin-top: 15px;
+}
+
+.signup-link a {
+  color: #ff6f61;
+  text-decoration: none;
+}
+
+.signup-link a:hover {
+  text-decoration: underline;
+}
