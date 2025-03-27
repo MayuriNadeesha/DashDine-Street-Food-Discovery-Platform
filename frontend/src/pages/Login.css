@@ -1,15 +1,49 @@
 /* Login Container */
 .login-container {
-  max-width: 400px;
+  max-width: 500px;
   margin: 50px auto;
-  padding: 20px;
   background-color: #f8f8f8;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+/* Login Tabs */
+.login-tabs {
+  display: flex;
+  border-bottom: 2px solid #ddd;
+}
+
+.tab {
+  flex: 1;
+  padding: 15px;
+  font-size: 16px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+}
+
+.tab.active {
+  background-color: #ff6f61;
+  color: white;
+}
+
+.tab:not(.active):hover {
+  background-color: #f0f0f0;
+}
+
+/* Login Content */
+.login-content {
+  padding: 25px;
   text-align: center;
 }
 
-.login-container h2 {
+.login-content h2 {
   font-size: 24px;
   margin-bottom: 20px;
   color: #333;
@@ -50,7 +84,7 @@
 /* Login Button */
 .login-button {
   width: 100%;
-  padding: 10px;
+  padding: 12px;
   font-size: 16px;
   background-color: #ff6f61;
   color: white;
@@ -58,6 +92,7 @@
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  margin-top: 10px;
 }
 
 .login-button:hover {
@@ -68,12 +103,13 @@
 .signup-link {
   font-size: 14px;
   color: #555;
-  margin-top: 15px;
+  margin-top: 20px;
 }
 
 .signup-link a {
   color: #ff6f61;
   text-decoration: none;
+  font-weight: 500;
 }
 
 .signup-link a:hover {
