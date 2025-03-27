@@ -7,6 +7,8 @@ import VendorProfilePage from './pages/VendorProfilePage'; // Import VendorProfi
 import UserDashboard from './pages/UserDashboard'; // Import UserDashboard
 import AboutUs from './pages/AboutUs'; // Import AboutUspage
 import ContactUs from './pages/ContactUs'; // Import ContactUspage
+import PrivacyPolicy from './pages/PrivacyPolicy'; // Import PrivacyPolicy
+import TermsConditions from './pages/TermsConditions'; // Import TermsConditions
 
 
 function App() {
@@ -19,6 +21,8 @@ function App() {
       <Route path="/user-dashboard" element={<UserDashboard />} /> {/* Route for User Dashboard */}
       <Route path="/about-us" element={<AboutUs />} /> {/* Route for AboutUs */}
       <Route path="/contact-us" element={<ContactUs />} /> {/* Route for ContactUs */}
+      <Route path="/privacy-policy" element={<PrivacyPolicy />} /> {/* Route for PrivacyPolicy */}
+      <Route path="/terms-conditions" element={<TermsConditions />} /> {/* Route for ContactUsTermsConditions */}
     </Routes>
   );
 }
