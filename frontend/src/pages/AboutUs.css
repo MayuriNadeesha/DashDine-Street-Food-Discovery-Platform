@@ -1,0 +1,144 @@
+/* AboutUs.css */
+
+.about-us-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  .about-us-header {
+    text-align: center;
+    margin-bottom: 50px;
+  }
+  
+  .about-us-header h1 {
+    font-size: 36px;
+    color: #333;
+    margin-bottom: 15px;
+  }
+  
+  .about-us-header p {
+    font-size: 18px;
+    color: #555;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  /* Mission Section */
+  .mission-section {
+    background-color: #f8f8f8;
+    padding: 40px;
+    border-radius: 10px;
+    margin-bottom: 50px;
+  }
+  
+  .mission-section h2 {
+    color: #ff6f61;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  /* Team Section */
+  .team-section {
+    margin-bottom: 50px;
+  }
+  
+  .team-section h2 {
+    color: #ff6f61;
+    margin-bottom: 30px;
+    text-align: center;
+  }
+  
+  .team-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+  }
+  
+  .team-member {
+    width: 280px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+  }
+  
+  .team-member:hover {
+    transform: translateY(-10px);
+  }
+  
+  .team-member-image {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+  }
+  
+  .team-member-info {
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .team-member-info h3 {
+    font-size: 20px;
+    margin-bottom: 5px;
+    color: #333;
+  }
+  
+  .team-member-info p {
+    color: #555;
+    margin-bottom: 10px;
+  }
+  
+  .team-member-role {
+    color: #ff6f61 !important;
+    font-weight: bold;
+  }
+  
+  /* Contact Section */
+  .contact-section {
+    background-color: #f8f8f8;
+    padding: 40px;
+    border-radius: 10px;
+  }
+  
+  .contact-section h2 {
+    color: #ff6f61;
+    margin-bottom: 30px;
+    text-align: center;
+  }
+  
+  .contact-info {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px;
+  }
+  
+  .contact-card {
+    flex: 1;
+    min-width: 250px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  .contact-card h3 {
+    color: #333;
+    margin-bottom: 15px;
+  }
+  
+  .contact-card p {
+    color: #555;
+    margin-bottom: 10px;
+  }
+  
+  .contact-icon {
+    font-size: 30px;
+    color: #ff6f61;
+    margin-bottom: 15px;
+  }
