@@ -3,18 +3,16 @@ import { FaUser, FaHeart, FaHistory, FaStar, FaSearch } from 'react-icons/fa';
 import './UserDashboard.css';
 
 function UserDashboard() {
-  const [activeSection, setActiveSection] = useState('profile'); // State to manage active section
+  const [activeSection, setActiveSection] = useState('profile');
 
-  // Sample user data
   const user = {
     name: 'User Test',
     email: 'user123@example.com',
-    profilePicture: 'https://via.placeholder.com/150', // Placeholder image URL
-    phone: '+94 77 123 4567', // User's phone number
-    address: '123 Main Street, Colombo, Sri Lanka', // User's address
+    profilePicture: 'https://via.placeholder.com/150',
+    phone: '+94 77 123 4567',
+    address: '123 Main Street, Colombo, Sri Lanka',
   };
 
-  // Sample data for favorite vendors, recently viewed vendors, and reviews
   const favoriteVendors = [
     { id: 1, name: 'Street Food Vendor 1' },
     { id: 2, name: 'Street Food Vendor 2' },
@@ -39,23 +37,19 @@ function UserDashboard() {
     { id: 5, vendor: 'Street Food Vendor 5', rating: 4, comment: 'Yummy!' },
   ];
 
-  // Function to render star ratings with half stars
   const renderStars = (rating) => {
     const stars = [];
-    const fullStars = Math.floor(rating); // Number of full stars
-    const hasHalfStar = rating % 1 !== 0; // Check if there's a half star
+    const fullStars = Math.floor(rating);
+    const hasHalfStar = rating % 1 !== 0;
 
-    // Render full stars
     for (let i = 1; i <= fullStars; i++) {
       stars.push(<FaStar key={`full-${i}`} className="star-filled" />);
     }
 
-    // Render half star if needed
     if (hasHalfStar) {
       stars.push(<FaStar key="half" className="star-half" />);
     }
 
-    // Render empty stars to fill up to 5
     const emptyStars = 5 - fullStars - (hasHalfStar ? 1 : 0);
     for (let i = 1; i <= emptyStars; i++) {
       stars.push(<FaStar key={`empty-${i}`} className="star-empty" />);
@@ -66,7 +60,6 @@ function UserDashboard() {
 
   return (
     <div className="user-dashboard">
-      {/* Sidebar */}
       <div className="sidebar">
         <div className="logo">DashDine</div>
         <nav>
@@ -97,14 +90,12 @@ function UserDashboard() {
         </nav>
       </div>
 
-      {/* Main Content */}
       <div className="main-content">
-        {/* Top Section: Welcome, Search Bar, and Profile Picture */}
         <div className="top-section">
           <div className="welcome-message">
             <h1>Welcome {user.name}!</h1>
           </div>
-          <div className="search-bar">
+          <div className="dashboard-search-bar">
             <input type="text" placeholder="Search vendors..." />
             <button><FaSearch /></button>
           </div>
@@ -113,7 +104,6 @@ function UserDashboard() {
           </div>
         </div>
 
-        {/* Dynamic Content Based on Active Section */}
         <div className="content-section">
           {activeSection === 'profile' && (
             <div className="profile-section">
