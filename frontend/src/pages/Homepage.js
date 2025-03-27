@@ -33,6 +33,7 @@ function Homepage() { // Updated component name
           <div className="logo">DashDine</div>
           <ul className="nav-links">
             <li><Link to="/about-us">About Us</Link></li>
+            <li><Link to="/contact-us">Contact Us</Link></li>
             <li><Link to="/login"><FaSignInAlt /> Login</Link></li>
             <li><Link to="/signup"><FaUser /> Sign Up</Link></li>
           </ul>
