@@ -8,6 +8,10 @@ import UserDashboard from './pages/UserDashboard';
 import AboutUs from './pages/AboutUs';
 import ContactUs from './pages/ContactUs';
 import VendorDashboard from './pages/VendorDashboard';
+import PrivacyPolicy from './pages/PrivacyPolicy'; // Import PrivacyPolicy
+import TermsConditions from './pages/TermsConditions'; // Import TermsConditions
+
+
 
 function App() {
   return (
@@ -20,6 +24,8 @@ function App() {
       <Route path="/about-us" element={<AboutUs />} />
       <Route path="/contact-us" element={<ContactUs />} />
       <Route path="/vendor-dashboard" element={<VendorDashboard />} /> {/* Fixed typo here */}
+      <Route path="/privacy-policy" element={<PrivacyPolicy />} /> {/* Route for PrivacyPolicy */}
+      <Route path="/terms-conditions" element={<TermsConditions />} /> {/* Route for ContactUsTermsConditions */}
     </Routes>
   );
 }
