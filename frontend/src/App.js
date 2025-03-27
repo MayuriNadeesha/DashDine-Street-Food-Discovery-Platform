@@ -1,13 +1,13 @@
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
-import Homepage from './pages/Homepage'; // Import Homepage
-import Login from './pages/Login'; // Import Login
-import SignUp from './pages/SignUp'; // Import SignUp
-import VendorProfilePage from './pages/VendorProfilePage'; // Import VendorProfilePage
-import UserDashboard from './pages/UserDashboard'; // Import UserDashboard
-import AboutUs from './pages/AboutUs'; // Import AboutUspage
-import ContactUs from './pages/ContactUs'; // Import ContactUspage
-
+import Homepage from './pages/Homepage';
+import Login from './pages/Login';
+import SignUp from './pages/SignUp';
+import VendorProfilePage from './pages/VendorProfilePage';
+import UserDashboard from './pages/UserDashboard';
+import AboutUs from './pages/AboutUs';
+import ContactUs from './pages/ContactUs';
+import VendorDashboard from './pages/VendorDashboard';
 
 function App() {
   return (
@@ -15,10 +15,11 @@ function App() {
       <Route path="/" element={<Homepage />} />
       <Route path="/login" element={<Login />} />
       <Route path="/signup" element={<SignUp />} />
-      <Route path="/vendor-profile/:vendorId" element={<VendorProfilePage />} /> {/* Dynamic route */}
-      <Route path="/user-dashboard" element={<UserDashboard />} /> {/* Route for User Dashboard */}
-      <Route path="/about-us" element={<AboutUs />} /> {/* Route for AboutUs */}
-      <Route path="/contact-us" element={<ContactUs />} /> {/* Route for ContactUs */}
+      <Route path="/vendor-profile/:vendorId" element={<VendorProfilePage />} />
+      <Route path="/user-dashboard" element={<UserDashboard />} />
+      <Route path="/about-us" element={<AboutUs />} />
+      <Route path="/contact-us" element={<ContactUs />} />
+      <Route path="/vendor-dashboard" element={<VendorDashboard />} /> {/* Fixed typo here */}
     </Routes>
   );
 }
