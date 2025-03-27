@@ -5,7 +5,8 @@ import Login from './pages/Login'; // Import Login
 import SignUp from './pages/SignUp'; // Import SignUp
 import VendorProfilePage from './pages/VendorProfilePage'; // Import VendorProfilePage
 import UserDashboard from './pages/UserDashboard'; // Import UserDashboard
-import AboutUs from './pages/AboutUs'; //Import AboutUsPage
+import AboutUs from './pages/AboutUs'; // Import AboutUspage
+
 
 function App() {
   return (
