@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom'; // Import useNavigate for navigation
 import './Login.css';
 import { FaUser, FaLock } from 'react-icons/fa';
 
@@ -6,6 +7,7 @@ function Login() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
+  const navigate = useNavigate(); // Initialize useNavigate
 
   const handleLogin = (event) => {
     event.preventDefault();
@@ -20,6 +22,9 @@ function Login() {
 
     // Clear error message
     setError('');
+
+    // Redirect to the User Dashboard after successful login
+    navigate('/user-dashboard'); // Navigate to the dashboard
   };
 
   return (
