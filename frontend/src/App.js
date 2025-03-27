@@ -6,6 +6,7 @@ import SignUp from './pages/SignUp'; // Import SignUp
 import VendorProfilePage from './pages/VendorProfilePage'; // Import VendorProfilePage
 import UserDashboard from './pages/UserDashboard'; // Import UserDashboard
 import AboutUs from './pages/AboutUs'; // Import AboutUspage
+import ContactUs from './pages/ContactUs'; // Import ContactUspage
 
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
       <Route path="/vendor-profile/:vendorId" element={<VendorProfilePage />} /> {/* Dynamic route */}
       <Route path="/user-dashboard" element={<UserDashboard />} /> {/* Route for User Dashboard */}
       <Route path="/about-us" element={<AboutUs />} /> {/* Route for AboutUs */}
+      <Route path="/contact-us" element={<ContactUs />} /> {/* Route for ContactUs */}
     </Routes>
   );
 }
