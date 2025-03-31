@@ -229,35 +229,126 @@
 }
 
 /* Vendor List Styles */
+.vendor-list-container {
+  position: relative;
+  display: inline-block;
+  margin-top: 15px;
+}
+
+/* Vendor List Styling */
 .vendor-list {
-  margin-top: 20px;
-  background-color: white;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 280px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  z-index: 100;
+  overflow: hidden;
+  margin-top: 10px;
+  max-height: 300px;
 }
 
-.vendor-list h3 {
+.vendor-list-header {
+  padding: 15px 20px;
+  background: #ff6f61;
+  color: white;
+}
+
+.vendor-list-header h3 {
+  margin: 0;
   font-size: 18px;
-  margin-bottom: 10px;
+  font-weight: 600;
 }
 
-.vendor-list ul {
+.vendor-count {
+  font-size: 12px;
+  opacity: 0.9;
+  display: block;
+  margin-top: 4px;
+}
+
+.vendor-list-content {
+  max-height: 240px;
+  overflow-y: auto;
+  padding-bottom: 8px;
+}
+
+/* Vendor Items */
+.initial-vendors,
+.scrollable-vendors ul {
   list-style: none;
   padding: 0;
+  margin: 0;
 }
 
-.vendor-list li {
-  margin: 10px 0;
-}
-
-.vendor-list a {
+.vendor-link {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 20px;
   text-decoration: none;
+  color: #333;
+  transition: all 0.2s ease;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.vendor-link:hover {
+  background: #fff5f4;
+}
+
+.vendor-name {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.vendor-arrow {
+  color: #ccc;
+  font-size: 12px;
+  transition: all 0.2s ease;
+}
+
+.vendor-link:hover .vendor-arrow {
   color: #ff6f61;
-  font-size: 16px;
+  transform: translateX(2px);
 }
 
-.vendor-list a:hover {
-  text-decoration: underline;
+/* Scrollable Section */
+.scrollable-vendors {
+  border-top: 1px solid #f0f0f0;
+  padding-top: 5px; 
 }
 
+.scroll-label {
+  padding: 6px 20px;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #999;
+  background: #f9f9f9;
+}
+
+/* Scrollbar Styling */
+.vendor-list-content::-webkit-scrollbar {
+  width: 5px;
+}
+
+.vendor-list-content::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.vendor-list-content::-webkit-scrollbar-thumb {
+  background: #ff6f61;
+  border-radius: 5px;
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translate(-50%, 10px); }
+  to { opacity: 1; transform: translate(-50%, 0); }
+}
+
+.vendor-list {
+  animation: fadeIn 0.3s ease-out;
+}

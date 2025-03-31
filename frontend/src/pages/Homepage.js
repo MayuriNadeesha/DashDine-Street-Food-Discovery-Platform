@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { FaUser, FaSignInAlt, FaMapMarkerAlt, FaStar, FaHeart, FaSearch } from 'react-icons/fa';
 import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin } from 'react-icons/fa';
 import Footer from '../pages/Footer';
+import { FaChevronRight } from 'react-icons/fa';
 
 function Homepage() { // Updated component name
   const [searchQuery, setSearchQuery] = useState('');
@@ -19,12 +20,21 @@ function Homepage() { // Updated component name
   };
 
   // Sample vendor data
+  const [showAllVendors, setShowAllVendors] = useState(false);
+  
   const vendors = [
     { id: 1, name: 'Street Food Vendor 1' },
     { id: 2, name: 'Street Food Vendor 2' },
     { id: 3, name: 'Street Food Vendor 3' },
     { id: 4, name: 'Street Food Vendor 4' },
     { id: 5, name: 'Street Food Vendor 5' },
+    { id: 6, name: 'Street Food Vendor 6' },
+    { id: 7, name: 'Street Food Vendor 7' },
+    { id: 8, name: 'Street Food Vendor 8' },
+    { id: 9, name: 'Street Food Vendor 9' },
+    { id: 10, name: 'Street Food Vendor 10' },
+    { id: 11, name: 'Street Food Vendor 11' },
+    { id: 12, name: 'Street Food Vendor 12' },
   ];
 
   return (
@@ -54,23 +64,60 @@ function Homepage() { // Updated component name
           </form>
 
           {/* Vendor Profile Button */}
-          <button className="cta-button" onClick={() => setShowVendors(!showVendors)}>
+          <div className="vendor-list-container">
+          <button 
+            className="cta-button" 
+            onClick={() => setShowVendors(!showVendors)}
+          >
             <FaMapMarkerAlt /> Vendor Profiles
           </button>
-
-          {/* Vendor List (Conditional Rendering) */}
+          
           {showVendors && (
             <div className="vendor-list">
-              <h3>Select a Vendor</h3>
-              <ul>
-                {vendors.map((vendor) => (
-                  <li key={vendor.id}>
-                    <Link to={`/vendor-profile/${vendor.id}`}>{vendor.name}</Link>
-                  </li>
-                ))}
-              </ul>
+              <div className="vendor-list-header">
+                <h3>Popular Vendors</h3>
+                <span className="vendor-count">{vendors.length} vendors available</span>
+              </div>
+              
+              <div className="vendor-list-content">
+                <ul className="initial-vendors">
+                  {vendors.slice(0, 5).map((vendor) => (
+                    <li key={vendor.id}>
+                      <Link 
+                        to={`/vendor-profile/${vendor.id}`}
+                        onClick={() => setShowVendors(false)}
+                        className="vendor-link"
+                      >
+                        <span className="vendor-name">{vendor.name}</span>
+                        <FaChevronRight className="vendor-arrow" />
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+                
+                {vendors.length > 5 && (
+                  <div className="scrollable-vendors">
+                    <div className="scroll-label">More Vendors ↓</div>
+                    <ul>
+                      {vendors.slice(5).map((vendor) => (
+                        <li key={vendor.id}>
+                          <Link 
+                            to={`/vendor-profile/${vendor.id}`}
+                            onClick={() => setShowVendors(false)}
+                            className="vendor-link"
+                          >
+                            <span className="vendor-name">{vendor.name}</span>
+                            <FaChevronRight className="vendor-arrow" />
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+              </div>
             </div>
           )}
+        </div>
         </div>
         <div className="hero-images">
           <div className="image-box" style={{ backgroundImage: "url('https://via.placeholder.com/300x200')" }}></div>
