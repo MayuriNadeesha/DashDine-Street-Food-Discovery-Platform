@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import './Login.css';
-import { FaUser, FaLock, FaStore, FaUserTie } from 'react-icons/fa';
+import { FaUser, FaLock, FaStore, FaUserTie, FaHome } from 'react-icons/fa';
 
 function Login() {
   const [activeTab, setActiveTab] = useState('user');
@@ -30,16 +30,13 @@ function Login() {
 
     // Temporary mock authentication
     if (activeTab === 'vendor') {
-      // Mock vendor credentials (remove in production)
       if (formData.username === 'vendor' && formData.password === 'vendor123') {
-        // Store vendor auth status
         localStorage.setItem('isVendorAuthenticated', 'true');
         navigate('/vendor-dashboard');
       } else {
         setError('Invalid vendor credentials');
       }
     } else {
-      // User login logic
       navigate('/user-dashboard');
     }
   };
@@ -102,12 +99,17 @@ function Login() {
           </button>
         </form>
 
-        <p className="signup-link">
-          Don't have an account?{' '}
-          <a href={`/${activeTab}-signup`}>
-            {activeTab === 'user' ? 'User Sign Up' : 'Vendor Registration'}
-          </a>
-        </p>
+        <div className="auth-links">
+          <p className="signup-link">
+            Don't have an account?{' '}
+            <Link to={`/signup?type=${activeTab}`}>
+              {activeTab === 'user' ? 'User Sign Up' : 'Vendor Registration'}
+            </Link>
+          </p>
+          <p className="home-link">
+            <Link to="/"><FaHome /> Back to Home</Link>
+          </p>
+        </div>
       </div>
     </div>
   );
