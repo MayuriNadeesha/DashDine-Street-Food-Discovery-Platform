@@ -10,6 +10,7 @@ import ContactUs from './pages/ContactUs';
 import VendorDashboard from './pages/VendorDashboard';
 import PrivacyPolicy from './pages/PrivacyPolicy'; // Import PrivacyPolicy
 import TermsConditions from './pages/TermsConditions'; // Import TermsConditions
+import Footer from './pages/Footer';
 
 
 
@@ -26,6 +27,7 @@ function App() {
       <Route path="/vendor-dashboard" element={<VendorDashboard />} /> {/* Fixed typo here */}
       <Route path="/privacy-policy" element={<PrivacyPolicy />} /> {/* Route for PrivacyPolicy */}
       <Route path="/terms-conditions" element={<TermsConditions />} /> {/* Route for ContactUsTermsConditions */}
+      <Route path="/footer" element={<Footer />} /> {/* Route for ContactUsTermsConditions */}
     </Routes>
   );
 }
