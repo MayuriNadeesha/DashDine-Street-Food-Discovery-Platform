@@ -1,138 +1,259 @@
 /* Vendor Profile Page Styles */
 .vendor-profile-page {
-    padding: 20px;
-    font-family: Arial, sans-serif;
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-  
-  /* Vendor Details Section */
-  .vendor-details {
-    background-color: #f8f8f8;
-    padding: 20px;
-    border-radius: 10px;
-    margin-bottom: 20px;
-    text-align: center;
-  }
-  
-  .vendor-details h1 {
-    font-size: 36px;
-    margin-bottom: 10px;
-  }
-  
-  .vendor-info {
-    font-size: 16px;
-    color: #555;
-    margin-bottom: 20px;
-  }
-  
-  .vendor-info p {
-    margin: 5px 0;
-  }
-  
-  .favorite-button {
-    padding: 10px 20px;
-    font-size: 16px;
-    background-color: #ff6f61;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    margin: 0 auto;
-  }
-  
-  .favorite-button.favorited {
-    background-color: #ff4f41;
-  }
-  
-  .favorite-button:hover {
-    background-color: #ff4f41;
-  }
-  
-  /* Menu Section */
-  .menu-section {
-    margin-bottom: 20px;
-  }
-  
-  .menu-section h2 {
-    font-size: 24px;
-    margin-bottom: 10px;
-  }
-  
-  .menu-items {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-  }
-  
-  .menu-item {
-    background-color: white;
-    padding: 15px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    flex: 1 1 calc(33.333% - 40px);
-    max-width: calc(33.333% - 40px);
-  }
-  
-  .menu-item h3 {
-    font-size: 18px;
-    margin-bottom: 10px;
-  }
-  
-  .menu-item p {
-    font-size: 14px;
-    color: #555;
-    margin: 5px 0;
-  }
-  
-  /* Reviews Section */
-  .reviews-section {
-    margin-bottom: 20px;
-  }
-  
-  .reviews-section h2 {
-    font-size: 24px;
-    margin-bottom: 10px;
-  }
-  
-  .reviews-list {
-    display: flex;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Not Found Messages */
+.not-found,
+.not-found-message {
+  text-align: center;
+  padding: 40px;
+  color: #ff6f61;
+  font-size: 1.2rem;
+}
+
+/* Header Section */
+.vendor-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.vendor-header h1 {
+  color: #333;
+  margin: 0;
+  font-size: 2.2rem;
+}
+
+/* Favorite Button */
+.favorite-btn,
+.favorite-button {
+  padding: 10px 20px;
+  background: #ff6f61;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 1rem;
+  transition: all 0.3s;
+}
+
+.favorite-btn.active,
+.favorite-button.favorited {
+  background: #4CAF50;
+}
+
+.favorite-btn:hover,
+.favorite-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background: #ff4f41;
+}
+
+/* Vendor Info */
+.vendor-info {
+  background: #f9f9f9;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+.vendor-info p {
+  margin: 10px 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #555;
+}
+
+/* Status Indicator */
+.status {
+  display: inline-block;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+.status.open {
+  background: #e8f5e9;
+  color: #2e7d32;
+}
+
+.status.closed {
+  background: #ffebee;
+  color: #c62828;
+}
+
+/* Map Section */
+.map-section {
+  margin: 30px 0;
+}
+
+.map-section h2 {
+  color: #333;
+  margin-bottom: 15px;
+  font-size: 1.5rem;
+}
+
+.map-container {
+  height: 400px;
+  width: 100%;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid #ddd;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.map-loading {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f5f5f5;
+  color: #666;
+}
+
+/* Leaflet Specific Styles */
+.leaflet-popup-content {
+  margin: 10px;
+  font-size: 14px;
+}
+
+.leaflet-default-icon-path {
+  background-image: url(https://unpkg.com/leaflet@1.7.1/dist/images/marker-icon.png);
+}
+
+/* Menu Section */
+.menu-section {
+  margin: 40px 0;
+}
+
+.menu-section h2 {
+  color: #333;
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+}
+
+.menu-items,
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.menu-item {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s;
+}
+
+.menu-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.menu-item h3 {
+  color: #ff6f61;
+  margin-top: 0;
+  margin-bottom: 15px;
+}
+
+.menu-item p {
+  margin: 8px 0;
+  color: #555;
+}
+
+/* Reviews Section */
+.reviews-section {
+  margin: 40px 0;
+}
+
+.reviews-section h2 {
+  color: #333;
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+}
+
+.reviews-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.review,
+.review-card {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.review-header,
+.review-rating,
+.rating {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.stars,
+.review-rating,
+.rating {
+  display: flex;
+  gap: 5px;
+}
+
+.filled,
+.star-filled {
+  color: #FFC107;
+}
+
+.empty,
+.star-empty {
+  color: #E0E0E0;
+}
+
+.reviewer,
+.review-user {
+  color: #666;
+  font-size: 0.9rem;
+  font-style: italic;
+}
+
+.review-text,
+.review-comment,
+.comment {
+  color: #333;
+  line-height: 1.6;
+  margin: 0 0 10px 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .vendor-header {
     flex-direction: column;
+    align-items: flex-start;
     gap: 15px;
   }
   
-  .review {
-    background-color: white;
-    padding: 15px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  .menu-items,
+  .menu-grid {
+    grid-template-columns: 1fr;
   }
   
-  .review-rating {
-    display: flex;
-    gap: 5px;
-    margin-bottom: 10px;
+  .map-container {
+    height: 300px;
   }
-  
-  .star-filled {
-    color: #ffcc00;
-  }
-  
-  .star-empty {
-    color: #ccc;
-  }
-  
-  .review-comment {
-    font-size: 14px;
-    color: #333;
-    margin-bottom: 5px;
-  }
-  
-  .review-user {
-    font-size: 12px;
-    color: #777;
-    text-align: right;
-  }
+}

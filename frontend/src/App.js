@@ -11,7 +11,7 @@ import VendorDashboard from './pages/VendorDashboard';
 import PrivacyPolicy from './pages/PrivacyPolicy'; // Import PrivacyPolicy
 import TermsConditions from './pages/TermsConditions'; // Import TermsConditions
 import Footer from './pages/Footer';
-
+import VendorSearchPage from './pages/VendorSearchPage';
 
 
 function App() {
@@ -28,6 +28,7 @@ function App() {
       <Route path="/privacy-policy" element={<PrivacyPolicy />} /> {/* Route for PrivacyPolicy */}
       <Route path="/terms-conditions" element={<TermsConditions />} /> {/* Route for ContactUsTermsConditions */}
       <Route path="/footer" element={<Footer />} /> {/* Route for ContactUsTermsConditions */}
+      <Route path="/vendors" component={VendorSearchPage} />
     </Routes>
   );
 }
