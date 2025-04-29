@@ -1,12 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './PrivacyPolicy.css'; 
+import logo from '../assets/Logo.png';
 
 function PrivacyPolicy() {
   
   return (
     <div className="privacy-policy-container">
       <div className="privacy-policy-header">
+        <img src={logo} alt="DashDine Logo" className="contact-logo" />
         <h1>Privacy Policy</h1>
         <p className="last-updated">Last Updated: {new Date().toLocaleDateString()}</p>
       </div>

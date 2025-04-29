@@ -13,6 +13,10 @@
     border-bottom: 2px solid #ff6f61;
     padding-bottom: 20px;
   }
+
+  .privacy-policy-header img {
+    height: 100px;
+  }
   
   .privacy-policy-header h1 {
     color: #2c3e50;
