@@ -77,7 +77,7 @@ function Homepage() { // Updated component name
               <div className="vendor-list-header">
                 <h3>Popular Vendors</h3>
                 <span className="vendor-count">{vendors.length} vendors available</span>
-              </div>
+              </div> 
               
               <div className="vendor-list-content">
                 <ul className="initial-vendors">

@@ -7,7 +7,8 @@
 
 /* Hero Section */
 .hero-section {
-  background: linear-gradient(135deg, #ff6f61, #ff9a9e);
+  /*background: linear-gradient(135deg, #ff6f61, #ff9a9e);*/
+  background: linear-gradient(135deg, #5a7391, #6c7a89);
   padding: 100px 20px;
   color: white;
   position: relative;
@@ -229,11 +230,21 @@
 }
 
 /* Vendor List Styles */
+/*.vendor-list-container {
+  position: relative;
+  display: inline-block;
+  margin-top: 15px;
+}*/
 .vendor-list-container {
   position: relative;
   display: inline-block;
   margin-top: 15px;
+  background: transparent;  /* <== Ensure no background */
+  padding: 0;
+  box-shadow: none;
+  border-radius: 0;
 }
+
 
 /* Vendor List Styling */
 .vendor-list {
