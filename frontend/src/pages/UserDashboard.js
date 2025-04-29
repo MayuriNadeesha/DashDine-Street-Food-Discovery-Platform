@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { FaUser, FaHeart, FaHistory, FaStar, FaSearch } from 'react-icons/fa';
 import './UserDashboard.css';
+import logo from '../assets/Logo.png';
 
 function UserDashboard() {
   const [activeSection, setActiveSection] = useState('profile');
@@ -61,7 +62,7 @@ function UserDashboard() {
   return (
     <div className="user-dashboard">
       <div className="sidebar">
-        <div className="logo">DashDine</div>
+        <div className="logo"><img src={logo} alt="DashDine Logo" style={{ height: '100px' }} /></div>
         <nav>
           <button
             className={activeSection === 'profile' ? 'active' : ''}

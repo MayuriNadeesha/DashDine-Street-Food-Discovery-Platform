@@ -60,13 +60,13 @@
 .hero-content h1 {
   font-size: 48px;
   margin-bottom: 20px;
-  animation: fadeIn 1.5s ease-in-out;
+  /*animation: fadeIn 1.5s ease-in-out;*/
 }
 
 .hero-content p {
   font-size: 18px;
   margin-bottom: 30px;
-  animation: fadeIn 2s ease-in-out;
+  /*animation: fadeIn 2s ease-in-out;*/
 }
 
 .cta-button {
@@ -171,7 +171,7 @@
 .feature-icon {
   font-size: 40px;
   margin-bottom: 15px;
-  color: #ff6f61;
+  color: #2c3e50;
 }
 
 /* Testimonials Section */
@@ -263,7 +263,7 @@
 
 .vendor-list-header {
   padding: 15px 20px;
-  background: #ff6f61;
+  background: #2c3e50;
   color: white;
 }
 
@@ -271,6 +271,7 @@
   margin: 0;
   font-size: 18px;
   font-weight: 600;
+  font-weight: bold;
 }
 
 .vendor-count {
@@ -321,7 +322,7 @@
 }
 
 .vendor-link:hover .vendor-arrow {
-  color: #ff6f61;
+  color: #2c3e50;
   transform: translateX(2px);
 }
 
@@ -350,7 +351,7 @@
 }
 
 .vendor-list-content::-webkit-scrollbar-thumb {
-  background: #ff6f61;
+  background: #2c3e50;
   border-radius: 5px;
 }
 

@@ -140,6 +140,7 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { FaUtensils, FaClock, FaChartLine, FaComments, FaCog, FaSearch, FaUserCircle, FaStar, FaPlus, FaTrash, FaReply } from 'react-icons/fa';
 import './VendorDashboard.css';
+import logo from '../assets/Logo.png';
 
 function VendorDashboard() {
   const [activeSection, setActiveSection] = useState('menu');
@@ -245,7 +246,7 @@ function VendorDashboard() {
     <div className="vendor-dashboard">
       {/* Sidebar */}
       <div className="sidebar">
-        <div className="logo">DashDine Vendor</div>
+        <div className="logo"><img src={logo} alt="DashDine Logo" style={{ height: '100px' }} /></div>
         <nav>
           <button
             className={activeSection === 'menu' ? 'active' : ''}
