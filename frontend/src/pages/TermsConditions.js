@@ -1,11 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import './TermsConditions.css'; // Create this CSS file
+import './TermsConditions.css'; 
+import logo from '../assets/Logo.png';
 
 function TermsConditions() {
   return (
     <div className="terms-container">
       <div className="terms-header">
+        <img src={logo} alt="DashDine Logo" className="contact-logo" />
         <h1>Terms & Conditions</h1>
         <p className="effective-date">Effective Date: {new Date().toLocaleDateString()}</p>
       </div>

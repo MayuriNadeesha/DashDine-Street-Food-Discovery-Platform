@@ -11,6 +11,12 @@
     text-align: center;
     margin-bottom: 40px;
   }
+
+  .contact-us-header img {
+  height: 100px;
+  margin-bottom: 20px;
+  }
+
   
   .contact-us-header h1 {
     font-size: 36px;

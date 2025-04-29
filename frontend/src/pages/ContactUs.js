@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './ContactUs.css';
 import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin, FaEnvelope, FaPhone } from 'react-icons/fa';
+import logo from '../assets/Logo.png';
 
 function ContactUs() {
   const [formData, setFormData] = useState({
@@ -39,6 +40,9 @@ function ContactUs() {
     <div className="contact-us-container">
       {/* Header Section */}
       <div className="contact-us-header">
+          <div className="contact-header-top">
+            <img src={logo} alt="DashDine Logo" className="contact-logo" />
+          </div>
         <h1>Contact Us</h1>
         <p>
           Have questions or feedback? We'd love to hear from you! 

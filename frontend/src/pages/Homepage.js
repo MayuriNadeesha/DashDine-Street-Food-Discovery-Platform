@@ -5,6 +5,7 @@ import { FaUser, FaSignInAlt, FaMapMarkerAlt, FaStar, FaHeart, FaSearch } from '
 import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin } from 'react-icons/fa';
 import Footer from '../pages/Footer';
 import { FaChevronRight } from 'react-icons/fa';
+import logo from '../assets/Logo.png';
 
 function Homepage() { // Updated component name
   const [searchQuery, setSearchQuery] = useState('');
@@ -42,7 +43,7 @@ function Homepage() { // Updated component name
       {/* Hero Section */}
       <header className="hero-section">
         <nav className="navbar">
-          <div className="logo">DashDine</div>
+          <div className="logo"><img src={logo} alt="DashDine Logo" style={{ height: '100px' }} /></div>
           <ul className="nav-links">
             <li><Link to="/login"><FaSignInAlt /> Login</Link></li>
             <li><Link to="/signup"><FaUser /> Sign Up</Link></li>
@@ -120,9 +121,12 @@ function Homepage() { // Updated component name
         </div>
         </div>
         <div className="hero-images">
-          <div className="image-box" style={{ backgroundImage: "url('https://via.placeholder.com/300x200')" }}></div>
-          <div className="image-box" style={{ backgroundImage: "url('https://via.placeholder.com/300x200')" }}></div>
-          <div className="image-box" style={{ backgroundImage: "url('https://via.placeholder.com/300x200')" }}></div>
+          <div className="image-box" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1555396273-367ea4eb4db5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80')",backgroundPosition: "center center"}}
+          aria-label="Delicious Sri Lankan street food"></div>
+          <div className="image-box" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1601050690597-df0568f70950?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80')",backgroundPosition: "center center"}}
+          aria-label="Friendly street food vendor preparing meal"></div>
+          <div className="image-box" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1547592180-85f173990554?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80')",backgroundPosition: "center center" }}
+          aria-label="Happy customers enjoying street food"></div>
         </div>
       </header>
 

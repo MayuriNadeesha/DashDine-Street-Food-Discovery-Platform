@@ -1,6 +1,7 @@
 import React from 'react';
 import './AboutUs.css';
 import { FaEnvelope, FaPhone, FaMapMarkerAlt, FaLinkedin, FaGithub } from 'react-icons/fa';
+import logo from '../assets/Logo.png';
 
 function AboutUs() {
   // Team member data
@@ -47,6 +48,7 @@ function AboutUs() {
     <div className="about-us-container">
       {/* Header Section */}
       <div className="about-us-header">
+        <img src={logo} alt="DashDine Logo" className="contact-logo" />
         <h1>About DashDine</h1>
         <p>
           We're on a mission to connect food lovers with the best street food vendors 
