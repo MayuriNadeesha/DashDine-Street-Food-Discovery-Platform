@@ -39,7 +39,7 @@
   }
   
   .mission-section h2 {
-    color: #ff6f61;
+    color: #2c3e50;
     margin-bottom: 20px;
     text-align: center;
   }
@@ -50,7 +50,7 @@
   }
   
   .team-section h2 {
-    color: #ff6f61;
+    color: #2c3e50;
     margin-bottom: 30px;
     text-align: center;
   }
@@ -98,7 +98,7 @@
   }
   
   .team-member-role {
-    color: #ff6f61 !important;
+    color: #2c3e50 !important;
     font-weight: bold;
   }
   
@@ -110,7 +110,7 @@
   }
   
   .contact-section h2 {
-    color: #ff6f61;
+    color: #2c3e50;
     margin-bottom: 30px;
     text-align: center;
   }
@@ -144,6 +144,6 @@
   
   .contact-icon {
     font-size: 30px;
-    color: #ff6f61;
+    color: #2c3e50;
     margin-bottom: 15px;
   }
