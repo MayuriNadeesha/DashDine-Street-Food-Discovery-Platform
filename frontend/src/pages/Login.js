@@ -20,24 +20,46 @@ function Login() {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    
+
     if (!formData.username || !formData.password) {
       setError('Both fields are required');
       return;
     }
 
-    // Temporary mock authentication
-    if (activeTab === 'vendor') {
-      if (formData.username === 'vendor' && formData.password === 'vendor123') {
-        localStorage.setItem('isVendorAuthenticated', 'true');
-        navigate('/vendor-dashboard');
+    try {
+      const response = await fetch('http://localhost:5000/api/auth/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          email: formData.username,
+          password: formData.password,
+          role: activeTab // "user" or "vendor"
+        })
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        // Save JWT token
+        localStorage.setItem('token', data.token);
+
+        // Navigate to dashboard
+        if (activeTab === 'vendor') {
+          localStorage.setItem('isVendorAuthenticated', 'true');
+          navigate('/vendor-dashboard');
+        } else {
+          navigate('/user-dashboard');
+        }
       } else {
-        setError('Invalid vendor credentials');
+        setError(data.message || 'Login failed');
       }
-    } else {
-      navigate('/user-dashboard');
+    } catch (err) {
+      console.error('Login error:', err);
+      setError('Server error. Please try again.');
     }
   };
 
@@ -66,16 +88,16 @@ function Login() {
 
       <div className="login-content">
         <h2>{activeTab === 'user' ? 'User Login' : 'Vendor Login'}</h2>
-        
+
         {error && <p className="error-message">{error}</p>}
-        
+
         <form onSubmit={handleSubmit}>
           <div className="input-group">
             <FaUser className="icon" />
             <input
               name="username"
               type="text" 
-              placeholder={activeTab === 'user' ? 'Username' : 'Vendor ID'} 
+              placeholder={activeTab === 'user' ? 'Username or Email' : 'Vendor Email'} 
               value={formData.username}
               onChange={handleChange}
               required
