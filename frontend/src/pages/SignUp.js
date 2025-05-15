@@ -7,7 +7,7 @@ function SignUp() {
   const location = useLocation();
   const queryParams = new URLSearchParams(location.search);
   const defaultTab = queryParams.get('type') === 'vendor' ? 'vendor' : 'user';
-  
+
   const [activeTab, setActiveTab] = useState(defaultTab);
   const [formData, setFormData] = useState({
     username: '',
@@ -31,9 +31,12 @@ function SignUp() {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    
+
+    setError('');
+
+    // Input validation
     if (activeTab === 'vendor') {
       if (!formData.vendorName || !formData.vendorLocation || !formData.email || !formData.password) {
         setError('All fields are required');
@@ -46,9 +49,43 @@ function SignUp() {
       }
     }
 
-    setError('');
-    console.log('Registration data:', formData);
-    navigate('/');
+    // Prepare API endpoint and payload
+    let endpoint = activeTab === 'vendor'
+      ? 'http://localhost:5000/api/auth/register-vendor'
+      : 'http://localhost:5000/api/auth/register-user';
+
+    let payload = activeTab === 'vendor'
+      ? {
+          vendorName: formData.vendorName,
+          vendorLocation: formData.vendorLocation,
+          email: formData.email,
+          password: formData.password
+        }
+      : {
+          username: formData.username,
+          email: formData.email,
+          password: formData.password
+        };
+
+    try {
+      const response = await fetch(endpoint, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload)
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        alert("Registration successful!");
+        navigate("/login");
+      } else {
+        setError(data.message || "Registration failed");
+      }
+    } catch (err) {
+      console.error(err);
+      setError("Server error. Please try again.");
+    }
   };
 
   return (
@@ -76,9 +113,9 @@ function SignUp() {
 
       <div className="signup-content">
         <h2>{activeTab === 'user' ? 'User Registration' : 'Vendor Registration'}</h2>
-        
+
         {error && <p className="error-message">{error}</p>}
-        
+
         <form onSubmit={handleSubmit} className="signup-form">
           {activeTab === 'vendor' && (
             <>
