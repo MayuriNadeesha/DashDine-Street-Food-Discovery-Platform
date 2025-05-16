@@ -28,7 +28,7 @@ function App() {
       <Route path="/privacy-policy" element={<PrivacyPolicy />} /> {/* Route for PrivacyPolicy */}
       <Route path="/terms-conditions" element={<TermsConditions />} /> {/* Route for ContactUsTermsConditions */}
       <Route path="/footer" element={<Footer />} /> {/* Route for ContactUsTermsConditions */}
-      <Route path="/vendors" component={VendorSearchPage} />
+      <Route path="/vendors" element={<VendorSearchPage />} />
     </Routes>
   );
 }
