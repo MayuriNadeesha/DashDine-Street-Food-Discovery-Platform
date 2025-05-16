@@ -44,15 +44,23 @@ function Login() {
       const data = await response.json();
 
       if (response.ok) {
-        // Save JWT token
+        // Save token and user info
         localStorage.setItem('token', data.token);
+        localStorage.setItem('username', data.username);
+        localStorage.setItem('userId', data.userId);
 
-        // Navigate to dashboard
         if (activeTab === 'vendor') {
           localStorage.setItem('isVendorAuthenticated', 'true');
           navigate('/vendor-dashboard');
         } else {
-          navigate('/user-dashboard');
+          // Check for redirect after login
+          const redirectPath = localStorage.getItem('redirectAfterLogin');
+          if (redirectPath) {
+            localStorage.removeItem('redirectAfterLogin');
+            navigate(redirectPath);
+          } else {
+            navigate('/user-dashboard');
+          }
         }
       } else {
         setError(data.message || 'Login failed');
@@ -66,7 +74,7 @@ function Login() {
   return (
     <div className="login-container">
       <div className="login-tabs">
-        <button 
+        <button
           className={`tab ${activeTab === 'user' ? 'active' : ''}`}
           onClick={() => {
             setActiveTab('user');
@@ -75,7 +83,7 @@ function Login() {
         >
           <FaUserTie /> User Login
         </button>
-        <button 
+        <button
           className={`tab ${activeTab === 'vendor' ? 'active' : ''}`}
           onClick={() => {
             setActiveTab('vendor');
@@ -96,8 +104,8 @@ function Login() {
             <FaUser className="icon" />
             <input
               name="username"
-              type="text" 
-              placeholder={activeTab === 'user' ? 'Username or Email' : 'Vendor Email'} 
+              type="text"
+              placeholder={activeTab === 'user' ? 'Username or Email' : 'Vendor Email'}
               value={formData.username}
               onChange={handleChange}
               required
@@ -108,8 +116,8 @@ function Login() {
             <FaLock className="icon" />
             <input
               name="password"
-              type="password" 
-              placeholder="Password" 
+              type="password"
+              placeholder="Password"
               value={formData.password}
               onChange={handleChange}
               required
