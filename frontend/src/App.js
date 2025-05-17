@@ -24,7 +24,7 @@ function App() {
       <Route path="/user-dashboard" element={<UserDashboard />} />
       <Route path="/about-us" element={<AboutUs />} />
       <Route path="/contact-us" element={<ContactUs />} />
-      <Route path="/vendor-dashboard" element={<VendorDashboard />} /> {/* Fixed typo here */}
+      <Route path="/vendor-dashboard" element={<VendorDashboard />} /> 
       <Route path="/privacy-policy" element={<PrivacyPolicy />} /> {/* Route for PrivacyPolicy */}
       <Route path="/terms-conditions" element={<TermsConditions />} /> {/* Route for ContactUsTermsConditions */}
       <Route path="/footer" element={<Footer />} /> {/* Route for ContactUsTermsConditions */}
