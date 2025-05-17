@@ -1,11 +1,9 @@
-// ✅ FULL MODIFIED VendorProfilePage.js
-
 import React, { useState, useEffect, useRef } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
-import { FaStar, FaHeart, FaMapMarkerAlt, FaClock, FaUtensils } from 'react-icons/fa';
+import { FaStar, FaHeart, FaMapMarkerAlt, FaClock, FaUtensils, FaArrowLeft } from 'react-icons/fa';
 import './VendorProfilePage.css';
 
 // Fix Leaflet icon issue
@@ -16,7 +14,7 @@ L.Icon.Default.mergeOptions({
   shadowUrl: require('leaflet/dist/images/marker-shadow.png'),
 });
 
-const vendors = [
+export const vendors = [
   {
     id: 1,
     name: "Colombo Kottu King",
@@ -241,11 +239,6 @@ function VendorProfilePage() {
   const handleSubmitReview = (e) => {
     e.preventDefault();
 
-    const token = localStorage.getItem('token');
-    const username = localStorage.getItem('username');
-    const userId = localStorage.getItem('userId');
-    const isLoggedIn = token && username && userId;
-
     if (!isLoggedIn) {
       localStorage.setItem('reviewDraft', JSON.stringify({
         vendorId: vendor.id,
@@ -279,6 +272,10 @@ function VendorProfilePage() {
       .catch(err => console.error('Error submitting review:', err));
   };
 
+  const handleBack = () => {
+    navigate('/dashboard');
+  };
+
   if (!vendor) {
     return (
       <div className="vendor-profile-page">
@@ -310,7 +307,7 @@ function VendorProfilePage() {
 
       <div className="map-section">
         <h2><FaMapMarkerAlt /> Location Map</h2>
-        <div className="map-container">
+        <div className="map-container" style={{ height: '400px', width: '100%' }}>
           <MapContainer center={vendor.coordinates} zoom={15} style={{ height: '100%', width: '100%' }}>
             <TileLayer
               url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
@@ -361,18 +358,28 @@ function VendorProfilePage() {
           </button>
         </form>
 
-        {reviews.length > 0 ? reviews.map((review, index) => (
-          <div key={index} className="review">
-            <div className="rating">
-              {[...Array(5)].map((_, i) => (
-                <FaStar key={i} color={i < review.rating ? '#ffc107' : '#e4e5e9'} />
-              ))}
+        {reviews.length > 0 ? (
+          reviews.map((review, index) => (
+            <div key={index} className="review">
+              <div className="rating">
+                {[...Array(5)].map((_, i) => (
+                  <FaStar key={i} color={i < review.rating ? 'gold' : 'lightgray'} />
+                ))}
+              </div>
+              <p><strong>{review.username}</strong>: {review.comment}</p>
             </div>
-            <p className="comment">{review.comment}</p>
-            <p className="user">- {review.username || 'Anonymous'}</p>
-          </div>
-        )) : <p>No reviews yet. Be the first to leave one!</p>}
+          ))
+        ) : (
+          <p>No reviews yet. Be the first to leave one!</p>
+        )}
       </div>
+
+      {/* Footer with Back to Dashboard Button */}
+      <footer className="vendor-footer">
+        <button className="back-to-dashboard-btn" onClick={handleBack}>
+          <FaArrowLeft /> Back to Dashboard
+        </button>
+      </footer>
     </div>
   );
 }

@@ -14,7 +14,6 @@ connectDB();
 app.use(cors());
 app.use(express.json());
 
-
 app.use('/api/auth', authRoutes);
 app.use('/api/reviews', reviewRoutes);
 app.use('/api/userprofile', userProfileRoutes);
