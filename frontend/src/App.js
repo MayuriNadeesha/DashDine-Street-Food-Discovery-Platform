@@ -13,7 +13,6 @@ import TermsConditions from './pages/TermsConditions'; // Import TermsConditions
 import Footer from './pages/Footer';
 import VendorSearchPage from './pages/VendorSearchPage';
 
-
 function App() {
   return (
     <Routes>
@@ -22,12 +21,14 @@ function App() {
       <Route path="/signup" element={<SignUp />} />
       <Route path="/vendor-profile/:vendorId" element={<VendorProfilePage />} />
       <Route path="/user-dashboard" element={<UserDashboard />} />
+      {/* Added alias route for user dashboard */}
+      <Route path="/dashboard" element={<UserDashboard />} />
       <Route path="/about-us" element={<AboutUs />} />
       <Route path="/contact-us" element={<ContactUs />} />
       <Route path="/vendor-dashboard" element={<VendorDashboard />} /> 
       <Route path="/privacy-policy" element={<PrivacyPolicy />} /> {/* Route for PrivacyPolicy */}
-      <Route path="/terms-conditions" element={<TermsConditions />} /> {/* Route for ContactUsTermsConditions */}
-      <Route path="/footer" element={<Footer />} /> {/* Route for ContactUsTermsConditions */}
+      <Route path="/terms-conditions" element={<TermsConditions />} /> {/* Route for TermsConditions */}
+      <Route path="/footer" element={<Footer />} /> {/* Route for Footer */}
       <Route path="/vendors" element={<VendorSearchPage />} />
     </Routes>
   );

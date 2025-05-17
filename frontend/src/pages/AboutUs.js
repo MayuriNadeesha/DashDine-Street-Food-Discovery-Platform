@@ -2,46 +2,30 @@ import React from 'react';
 import './AboutUs.css';
 import { FaEnvelope, FaPhone, FaMapMarkerAlt, FaLinkedin, FaGithub } from 'react-icons/fa';
 import logo from '../assets/Logo.png';
+//import uthpalaImg from '../assets/uthpala.jpg';
 
 function AboutUs() {
   // Team member data
   const teamMembers = [
     {
       id: 1,
-      name: 'John Doe',
-      role: 'Founder & CEO',
-      bio: 'Passionate about connecting people with great street food experiences.',
+      name: 'Mayuri Nadeesha',
+      role: 'Developer',
+      bio: 'Passionate about coding.',
       image: 'https://randomuser.me/api/portraits/men/32.jpg',
       linkedin: '#',
       github: '#'
     },
     {
       id: 2,
-      name: 'Jane Smith',
-      role: 'Lead Developer',
-      bio: 'Builds the technology that powers our platform.',
-      image: 'https://randomuser.me/api/portraits/women/44.jpg',
+      name: 'Uthpala Pathirana',
+      role: 'Developer',
+      bio: 'Passionate about coding.',
+      //image: uthpalaImg,
       linkedin: '#',
       github: '#'
     },
-    {
-      id: 3,
-      name: 'Alex Johnson',
-      role: 'Marketing Director',
-      bio: 'Spreads the word about amazing street food vendors.',
-      image: 'https://randomuser.me/api/portraits/men/75.jpg',
-      linkedin: '#',
-      github: '#'
-    },
-    {
-      id: 4,
-      name: 'Sarah Williams',
-      role: 'UX Designer',
-      bio: 'Creates intuitive experiences for our users.',
-      image: 'https://randomuser.me/api/portraits/women/68.jpg',
-      linkedin: '#',
-      github: '#'
-    }
+    
   ];
 
   return (

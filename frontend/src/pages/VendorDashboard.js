@@ -437,122 +437,125 @@ function VendorDashboard() {
           )}
 
           {/* Settings Section */}
-          {activeSection === 'settings' && (
-            <div className="settings">
-              <div className="settings-header">
-                <h2>Vendor Settings</h2>
-                {!isEditing ? (
-                  <button className="edit-button" onClick={handleEditToggle}>
-                    Edit Profile
-                  </button>
-                ) : (
-                  <div className="edit-actions">
-                    <button className="cancel-button" onClick={handleEditToggle}>
-                      Cancel
-                    </button>
-                    <button className="save-button" onClick={handleSaveChanges}>
-                      Save Changes
-                    </button>
-                  </div>
-                )}
-              </div>
+          
+{activeSection === 'settings' && (
+  <div className="settings">
+    <div className="settings-header">
+      <h2>Vendor Settings</h2>
+      {!isEditing ? (
+        <button className="edit-button" onClick={handleEditToggle}>
+          Edit Profile
+        </button>
+      ) : (
+        <div className="edit-actions">
+          <button className="cancel-button" onClick={handleEditToggle}>
+            Cancel
+          </button>
+          <button className="save-button" onClick={handleSaveChanges}>
+            Save Changes
+          </button>
+        </div>
+      )}
+    </div>
 
-              <div className="profile-section">
-                <div className="profile-image-container">
-                  {profileImage ? (
-                    <img src={profileImage} alt="Profile" className="profile-image" />
-                  ) : (
-                    <FaUserCircle className="profile-icon" />
-                  )}
-                  {isEditing && (
-                    <div className="image-upload">
-                      <label htmlFor="profile-upload" className="upload-button">
-                        Change Photo
-                      </label>
-                      <input
-                        id="profile-upload"
-                        type="file"
-                        accept="image/*"
-                        onChange={handleImageChange}
-                        style={{ display: 'none' }}
-                      />
-                    </div>
-                  )}
-                </div>
-
-                <form className="settings-form">
-                  <div className="form-group">
-                    <label>Vendor Name</label>
-                    {isEditing ? (
-                      <input
-                        type="text"
-                        name="name"
-                        value={vendorInfo.name}
-                        onChange={handleVendorInfoChange}
-                      />
-                    ) : (
-                      <div className="info-value">{vendorInfo.name}</div>
-                    )}
-                  </div>
-
-                  <div className="form-group">
-                    <label>Email</label>
-                    {isEditing ? (
-                      <input
-                        type="email"
-                        name="email"
-                        value={vendorInfo.email}
-                        onChange={handleVendorInfoChange}
-                      />
-                    ) : (
-                      <div className="info-value">{vendorInfo.email}</div>
-                    )}
-                  </div>
-
-                  <div className="form-group">
-                    <label>Phone Number</label>
-                    {isEditing ? (
-                      <input
-                        type="tel"
-                        name="phone"
-                        value={vendorInfo.phone}
-                        onChange={handleVendorInfoChange}
-                      />
-                    ) : (
-                      <div className="info-value">{vendorInfo.phone}</div>
-                    )}
-                  </div>
-
-                  <div className="form-group">
-                    <label>Location</label>
-                    {isEditing ? (
-                      <input
-                        type="text"
-                        name="location"
-                        value={vendorInfo.location}
-                        onChange={handleVendorInfoChange}
-                      />
-                    ) : (
-                      <div className="info-value">{vendorInfo.location}</div>
-                    )}
-                  </div>
-
-                  <div className="form-group">
-                    <label>Description</label>
-                    {isEditing ? (
-                      <textarea
-                        name="description"
-                        value={vendorInfo.description}
-                        onChange={handleVendorInfoChange}
-                      />
-                    ) : (
-                      <div className="info-value">{vendorInfo.description}</div>
-                    )}
-                  </div>
-                </form>
-              </div>
-            </div>
+    <div className="profile-card">
+      <div className="profile-content">
+        <div className="profile-picture-left">
+          {profileImage ? (
+            <img src={profileImage} alt="Profile" className="profile-picture-large" />
+          ) : (
+            <FaUserCircle className="profile-picture-large" />
           )}
+          {isEditing && (
+            <label className="upload-label">
+              Change Photo
+              <input
+                type="file"
+                accept="image/*"
+                onChange={handleImageChange}
+                className="file-input"
+              />
+            </label>
+          )}
+        </div>
+
+        <div className="profile-info">
+          {isEditing ? (
+            <form className="settings-form">
+              <div className="form-group">
+                <label>Vendor Name</label>
+                <input
+                  type="text"
+                  name="name"
+                  value={vendorInfo.name}
+                  onChange={handleVendorInfoChange}
+                />
+              </div>
+              <div className="form-group">
+                <label>Email</label>
+                <input
+                  type="email"
+                  name="email"
+                  value={vendorInfo.email}
+                  onChange={handleVendorInfoChange}
+                />
+              </div>
+              <div className="form-group">
+                <label>Phone Number</label>
+                <input
+                  type="tel"
+                  name="phone"
+                  value={vendorInfo.phone}
+                  onChange={handleVendorInfoChange}
+                />
+              </div>
+              <div className="form-group">
+                <label>Location</label>
+                <input
+                  type="text"
+                  name="location"
+                  value={vendorInfo.location}
+                  onChange={handleVendorInfoChange}
+                />
+              </div>
+              <div className="form-group">
+                <label>Description</label>
+                <textarea
+                  name="description"
+                  value={vendorInfo.description}
+                  onChange={handleVendorInfoChange}
+                />
+              </div>
+            </form>
+          ) : (
+            <>
+              <div className="info-group">
+                <strong>Vendor Name</strong>
+                <p>{vendorInfo.name}</p>
+              </div>
+              <div className="info-group">
+                <strong>Email</strong>
+                <p>{vendorInfo.email}</p>
+              </div>
+              <div className="info-group">
+                <strong>Phone Number</strong>
+                <p>{vendorInfo.phone}</p>
+              </div>
+              <div className="info-group">
+                <strong>Location</strong>
+                <p>{vendorInfo.location}</p>
+              </div>
+              <div className="info-group">
+                <strong>Description</strong>
+                <p>{vendorInfo.description}</p>
+              </div>
+            </>
+          )}
+        </div>
+      </div>
+    </div>
+  </div>
+)}
         </div>
       </div>
     </div>
